@@ -10,7 +10,26 @@ namespace TestApp2
     {
         static void Main(string[] args)
         {
+            string resultText = "";
+            Encoder encoder = new Encoder();
+            resultText =  encoder.EncodeString("abc");
+            Console.WriteLine(resultText);
+            Console.ReadLine();
+        }
+    }
 
+    public class Encoder
+    {
+        public string EncodeString(string str)
+        {
+            string res = "";
+            foreach (char ch in str)
+            {
+                char s = ch;
+                s++;
+                res += s;
+            }
+            return res;
         }
     }
 }
