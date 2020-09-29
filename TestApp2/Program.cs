@@ -11,12 +11,17 @@ namespace TestApp2
     {
         static void Main(string[] args)
         {
-            string resultText = "";
-            Encoder encoder = new Encoder();
-            resultText =  encoder.EncodeString("abc", false);
-            Console.WriteLine(resultText);
-            resultText = encoder.EncodeString("abc", true);
-            Console.WriteLine(resultText);
+            string resultText = "", text = "abc";
+            Console.WriteLine("Исходный текст: " + text);
+
+            Encoder encoder = new Encoder(); //Создаем экземпляр класса Encoder
+
+            resultText =  encoder.EncodeString(text, false); //Кодируем текст обычной кодировкой
+            Console.WriteLine("Обычная кодировка: " + resultText);
+            
+            resultText = encoder.EncodeString(text, true); //Кодируем текст через SHA1
+            Console.WriteLine("Кодировка через SHA1: " + resultText);
+            
             Console.ReadLine();
         }
     }
